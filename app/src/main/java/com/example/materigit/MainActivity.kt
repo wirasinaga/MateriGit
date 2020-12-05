@@ -22,12 +22,12 @@ class MainActivity : AppCompatActivity() {
         val viewPager: ViewPager = findViewById(R.id.view_pager)
         val viewPagerAdapter = ViewPagerAdapter(supportFragmentManager)
 
+        viewPagerAdapter.tambahFragment(InboxFragment(), "Inbox")
         viewPager.adapter = viewPagerAdapter
         tabLayout.setupWithViewPager(viewPager)
     }
     internal class ViewPagerAdapter(fragmentManager: FragmentManager): FragmentPagerAdapter(
-        fragmentManager, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT
-    ){
+        fragmentManager, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT){
 
         private val fragments: ArrayList<Fragment>
         private val juduls: ArrayList<String>
